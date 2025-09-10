@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Genius - Smart Solutions for Farmers</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span>Farmer Genius</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#tools" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="#crop-calendar" class="nav-link">Crop Calendar</a></li>
+                <li class="nav-item"><a href="#schemes" class="nav-link">Schemes</a></li>
+                <li class="nav-item"><a href="#soil-guide" class="nav-link">Soil Guide</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Farmer Genius – Smart Solutions for Farmers</h1>
+            <p class="hero-subtitle">Farming made easier with tools, schemes, and guides.</p>
+            <a href="#tools" class="hero-btn">
+                <i class="fas fa-seedling"></i>
+                Explore Tools
+            </a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Smart Farming Tools</h2>
+                <p class="section-description">Calculate and plan your farming needs with our intelligent tools</p>
+            </div>
+            
+            <div class="tools-grid">
+                <!-- Fertilizer Calculator -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Fertilizer Calculator</h3>
+                    <p>Calculate the exact amount of fertilizer needed for your crops</p>
+                    
+                    <div class="calculator">
+                        <div class="input-group">
+                            <label>Select Crop:</label>
+                            <select id="crop-select" class="input-field">
+                                <option value="">Choose crop...</option>
+                                <option value="rice">Rice</option>
+                                <option value="wheat">Wheat</option>
+                                <option value="corn">Corn</option>
+                                <option value="tomato">Tomato</option>
+                                <option value="potato">Potato</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Area (acres):</label>
+                            <input type="number" id="area-input" class="input-field" placeholder="Enter area">
+                        </div>
+                        <button class="calc-btn" onclick="calculateFertilizer()">
+                            <i class="fas fa-calculator"></i>
+                            Calculate
+                        </button>
+                        <div id="fertilizer-result" class="result"></div>
+                    </div>
+                </div>
+
+                <!-- Irrigation Planner -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Irrigation Planner</h3>
+                    <p>Plan your water requirements based on land size and crop type</p>
+                    
+                    <div class="calculator">
+                        <div class="input-group">
+                            <label>Land Size (acres):</label>
+                            <input type="number" id="land-size" class="input-field" placeholder="Enter land size">
+                        </div>
+                        <div class="input-group">
+                            <label>Crop Type:</label>
+                            <select id="irrigation-crop" class="input-field">
+                                <option value="">Choose crop...</option>
+                                <option value="rice">Rice</option>
+                                <option value="wheat">Wheat</option>
+                                <option value="corn">Corn</option>
+                                <option value="vegetables">Vegetables</option>
+                                <option value="fruits">Fruits</option>
+                            </select>
+                        </div>
+                        <button class="calc-btn" onclick="calculateIrrigation()">
+                            <i class="fas fa-calculator"></i>
+                            Calculate Water Need
+                        </button>
+                        <div id="irrigation-result" class="result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Calendar -->
+    <section id="crop-calendar" class="crop-calendar-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Crop Calendar</h2>
+                <p class="section-description">Know the best time to plant and harvest your crops</p>
+            </div>
+            
+            <div class="calendar-container">
+                <table class="crop-table">
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>Planting Season</th>
+                            <th>Growing Period</th>
+                            <th>Harvest Time</th>
+                            <th>Best Climate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-seedling"></i> Rice</td>
+                            <td>Jun - Jul</td>
+                            <td>120-140 days</td>
+                            <td>Oct - Nov</td>
+                            <td>Tropical, Warm</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-wheat-awn"></i> Wheat</td>
+                            <td>Nov - Dec</td>
+                            <td>120-150 days</td>
+                            <td>Mar - Apr</td>
+                            <td>Cool, Dry</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-corn"></i> Corn</td>
+                            <td>Jun - Jul</td>
+                            <td>90-120 days</td>
+                            <td>Sep - Oct</td>
+                            <td>Warm, Moderate Rain</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-carrot"></i> Potato</td>
+                            <td>Oct - Nov</td>
+                            <td>90-120 days</td>
+                            <td>Jan - Feb</td>
+                            <td>Cool, Well-drained</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-apple-alt"></i> Tomato</td>
+                            <td>Jul - Aug</td>
+                            <td>60-90 days</td>
+                            <td>Oct - Nov</td>
+                            <td>Warm, Sunny</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-leaf"></i> Cotton</td>
+                            <td>Apr - May</td>
+                            <td>160-200 days</td>
+                            <td>Oct - Dec</td>
+                            <td>Hot, Long Season</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Schemes -->
+    <section id="schemes" class="schemes-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Government Schemes</h2>
+                <p class="section-description">Explore beneficial schemes and subsidies for farmers</p>
+            </div>
+            
+            <div class="schemes-grid">
+                <div class="scheme-card">
+                    <div class="scheme-icon">
+                        <i class="fas fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3>PM-KISAN Scheme</h3>
+                    <p>Direct income support of ₹6000 per year to small and marginal farmers through Direct Benefit Transfer (DBT).</p>
+                    <div class="scheme-benefit">₹6000/year</div>
+                </div>
+
+                <div class="scheme-card">
+                    <div class="scheme-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Crop Insurance</h3>
+                    <p>Pradhan Mantri Fasal Bima Yojana provides insurance coverage and financial support to farmers in case of crop failure.</p>
+                    <div class="scheme-benefit">Full Coverage</div>
+                </div>
+
+                <div class="scheme-card">
+                    <div class="scheme-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3>Farm Mechanization</h3>
+                    <p>Sub-Mission on Agricultural Mechanization promotes farm mechanization through subsidies on agricultural equipment.</p>
+                    <div class="scheme-benefit">Up to 50% Subsidy</div>
+                </div>
+
+                <div class="scheme-card">
+                    <div class="scheme-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Irrigation Support</h3>
+                    <p>Per Drop More Crop scheme promotes water use efficiency through precision irrigation systems and water conservation.</p>
+                    <div class="scheme-benefit">Water Efficiency</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soil Test Guide -->
+    <section id="soil-guide" class="soil-guide-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Soil Test Guide</h2>
+                <p class="section-description">Step-by-step guide to test and improve your soil quality</p>
+            </div>
+            
+            <div class="guide-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span class="step-number">1</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Sample Collection</h3>
+                        <p>Collect soil samples from different parts of your field at 6-8 inch depth. Mix samples thoroughly and take 500g for testing.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-flask"></i>
+                        <span class="step-number">2</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Laboratory Testing</h3>
+                        <p>Take samples to nearest soil testing laboratory or use soil health card services. Tests include pH, organic carbon, NPK levels.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="step-number">3</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Report Analysis</h3>
+                        <p>Understand your soil health report. Check pH levels (6.5-7.5 ideal), nutrient status, and organic matter content.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-seedling"></i>
+                        <span class="step-number">4</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Soil Improvement</h3>
+                        <p>Apply recommendations: lime for acidic soil, organic manure for nutrient deficiency, and appropriate fertilizers as suggested.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-redo"></i>
+                        <span class="step-number">5</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Regular Monitoring</h3>
+                        <p>Test soil annually before major planting season. Monitor changes and adjust farming practices accordingly for optimal crop yield.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Farmer Genius</span>
+                    </div>
+                    <p>Smart solutions for modern farming. Empowering farmers with technology and knowledge.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@farmergenius.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Farmer Genius. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
